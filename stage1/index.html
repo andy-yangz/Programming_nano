@@ -10,4 +10,113 @@ text that will be ignored by the computer! -->
 </head>
 <body> <!-- The body tag is where the "flesh" of your HTML goes -->
   <!-- Write your HTML here -->
+  <div>
+    <h2>Lecture1: The Basics of the web and HTML</h2>
+    <h3>Part1: Technological empathy to understand what happens when we open a web page.</h3>
+    <div>
+      <b>Several important concepts about internet</b>
+      <li><em>Web</em>: Web to connect different computers. Most famous one is <em>WWW</em> (World Wide Web).</li>
+      <li><em>HTML</em>: Hyper Text Markup Language. Main part of WWW.</li>
+      <li><em>urls</em>: What we can use it to access website.</li>
+      <li><em>HTTP</em>: Hyper Text Transfer Protocal. How html file be tranfered and displayed.</li>
+      <li><em>Web Application</em>: Applications used on web.</li>
+      <br>
+    </div>
+    <div>
+      <b>How these works?</b>
+      <p>At first, user should use the browser, a web application, on his computer try to access a web site, which by entering
+      urls in brower. And through web, by HTTP, the server will send us HTML files. So we can look these html files on our own
+      computer through the brower.</p>
+    </div>
+    <div>
+      <b>What make up HTML files</b>
+      <p>There are almost four parts compose HTML files. They are:
+      <li><em>Text Content: </em>Text strings what we see.</li>
+      <li><em>Mark Up: </em>What a web page looks like.</li>
+      <li><em>Reference to other documents: </em>Such like images, videos, and audios.</li>
+      <li><em>Other Pages: </em>We all familiar with this. Through hyperlink we can jump to other pages.</li>
+      <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3873828673/m-48724340"> More details.</a>
+      </p>
+    </div>
+    <h3>Part2: Learning some tags to create a simple html page</h3>
+    <div>
+      <b>Elements</b>
+      <p>HTML files are made by various elements. <br>
+        And normally elements are made by three parts, opening tag, content, closing tag. <br>
+        However, some tags can also have attributes.
+        And even there are some tags called void tag without content and closing tag. <br>
+        There are some examples.
+      </p>
+      <p>
+      <li><em>Normal: </em> &ltb&gt <b>Bold</b>; &ltem&gt <em>Emphasis</em>; </li>
+      <li><em>With Attributes: </em> &lta href=url&gt <a href="http://www.udacity.com">Anchor</a> </li>
+      <li><em>Void Tag:</em> &ltimg src=url&gt This image tag. <img src="https://www.uplabs.com/assets/integrations/udacity-92b3b2525603489c7c5f325491d0ff44652631210086bb2ab082b897b9b39da0.png" alt="Errors!">
+      It's have no closing tag because has no content.</li>
+      <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3873828673/m-48723444">More details.</a>
+      </p>
+    </div>
+    <div>
+      <b>Inline & Block</b>
+      <p>In addition to above variety, there are also a feature called <b>Block</b> is important. Block
+      means a part of region divid with other parts. And we can change features of its looklike or something else.
+      However, <b>Inline</b> is elements in a part of region or block. One easy way to discriminate them is to see
+      will it change line, except &ltbr&gt element.
+      Example:
+      <li><em>Block: </em>&ltp&gt, &ltspan&gt, &ltdiv&gt</li>
+      <li><em>Inline: </em>&ltem&gt &ltbr&gt</li></p>
+    </div>
+    <div>
+      <b>HTML file detail</b>
+      <p><li><em>Doctype</em>: There is a line to declare document type. Normally, HTML.</li>
+      <li><em>Head</em>: This part will describe the layout of this html file. It can have CSS, Javascript. </li>
+      <li><em>Body</em>: Main part of a html file. The contents that we want show to other people will be there.</li>
+      </p>
+    </div>
+    <div>
+      <b>Summary</b>
+      <p>-Normally, we go to WWW access HTML files through HTTP protcol. <br>
+      -HTML is made up by Text Content, Mark Up, and Reference to various documents and other pages. <br>
+      -HTML has many elements which have several categories. Like void tag, tag with attributes, and incline and block. <br>
+      -HTML has two parts. Head to tell the design. And body to tell the content. <br>
+      </p>
+    </div>
+  </div>
+
+  <!-- Lesson 2  -->
+  <div>
+    <h2>Lesson2: The structure of HTML</h2>
+    <div>
+      <b>Funny analogy of HTML, CSS, and Javascript</b>
+      <p>If a webpage file is an house, then we can look <em>HTML</em> as it's walls and
+      fundation. In other words, it forms the structure of webpage. <em>CSS</em>, which
+      decides the style of the webpage, just like how we choose our room color and
+      decorations. Last, <em>Javascript</em> like the controller in our house. It manages
+      the interactions of the webpage.</p>
+    </div>
+    <div>
+      <b>Chrome developer tool</b>
+      <p>If we use chrome, we can access some very covenient tool for our development.
+      For shortcut, we can press Shift + Ctrl + i to call developer tool. From this tool,
+      we could see structure of webpage very easily, and we can also change some features
+      by our own to look what will happen.</p>
+    </div>
+    <div>
+      <b>DOM (Document Object Model)</b>
+      <p>
+        DOM means tree-like structure of page. Just like in HTML files, we can see
+        many elements are included in other elements, which also are included by other elements.
+        There are many levels of elements, and you can draw a tree by their relations.
+      </p>
+    </div>
+    <div>
+      <b>Everywhere boxes, why box</b>
+      <p>At first, why we use boxes to represent elements is that in this way it will be
+      easy to rearrange the style and layout of your webpage. Because the concept
+      of box is so important that we need learn how to boxify a design. Before you
+      type your code, you need draw boxes to the ordered design and get the structure.
+      Then type your code.</p>
+    </div>
+  </div>
+
+
 </body>
