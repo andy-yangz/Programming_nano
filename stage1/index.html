@@ -11,7 +11,7 @@ text that will be ignored by the computer! -->
 <body> <!-- The body tag is where the "flesh" of your HTML goes -->
   <!-- Write your HTML here -->
   <div>
-    <h2>Lecture1: The Basics of the web and HTML</h2>
+    <h2>Lecture 1: The Basics of the web and HTML</h2>
     <h3>Part1: Technological empathy to understand what happens when we open a web page.</h3>
     <div>
       <b>Several important concepts about internet</b>
@@ -84,7 +84,7 @@ text that will be ignored by the computer! -->
 
   <!-- Lesson 2  -->
   <div>
-    <h2>Lesson2: The structure of HTML</h2>
+    <h2>Lesson 2: The structure of HTML</h2>
     <div>
       <b>Funny analogy of HTML, CSS, and Javascript</b>
       <p>If a webpage file is an house, then we can look <em>HTML</em> as it's walls and
@@ -117,6 +117,68 @@ text that will be ignored by the computer! -->
       Then type your code.</p>
     </div>
   </div>
+
+  <!-- Lecture 3 -->
+  <div class="lecture">
+    <h2>Lecture 3: CSS style and HTML structure</h2>
+    <div class="concept">
+      <b>CSS (Cascading Style Sheet)</b>
+      <p>CSS are the codes to control "Style" of HTML elements. It has two parts:
+         the selector part to select elements; the declaration to declare the property and its value.
+      </p>
+    </div>
+    <div class="concept">
+      <b>OH: span & div, class & id</b>
+      <p>
+        The main difference between span and div two elements is that span is inline
+        element, but div is block element. In othe words, div will take whole width, while
+        span just take the area it spans. So span is used to adjust more dedicted style,
+        whereas div is used to control layout style.
+      </p>
+      <p>
+        The differece between id and class is that id always be used to a unique element,
+        while class is used to a group of elements. So id are very convenient to be used
+        as bookmarks of content.
+      </p>
+    </div>
+    <div class="concept">
+      <b>Box model</b>
+      <p>
+        Box model of HTML has four areas. The core one is called content, which
+        has the main contents. Then the second one is called padding, which like
+        shield to protect content and clear area. More outer one is border area,
+        which is boder of box and has the same color with box. The last one is called
+        margin, which decied the space between boxes.
+      </p>
+    </div>
+    <div class="concept">
+      <b>How to make a good boxes layout</b>
+      <p>
+        Because box has many properties, so it is very hard to get right size of a box.
+        We can resolve this in two ways.
+        <ol>
+          <li>Set size in terms of percentage.</li>
+          <li>Set box-sizing property to border-box for every elements.</li>
+        </ol>
+        Sometiems, we can also use flex box layout to achieve a good layout.
+      </p>
+    </div>
+    <div class="concept">
+      <b>Code, Test, Refine</b>
+      <p>
+        For a big picture flow, when we write HTML file, we need do several steps.
+        <ol>
+          <li>Look for natural boxes from design.</li>
+          <li>Look repeated styles by semantic elements.</li>
+          <li>Write HTML.</li>
+          <li>Apply styles (From big to small).</li>
+          <li>Fix things.</li>
+        </ol>
+        Normally, we will come cross 3 to 5 several times to make a page look good.
+      </p>
+    </div>
+  </div>
+
 
 
 </body>
