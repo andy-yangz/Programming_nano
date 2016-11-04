@@ -1,0 +1,32 @@
+/* This is a CSS comment.*/
+
+
+/*
+Comments are only to help PEOPLE read a code file. The
+computer ignores them.
+*/
+.title {
+    padding-top: 30px;
+    background-color: #33BEBE;
+    color: white;
+}
+
+.description {
+  color: #7C8b88;
+  max-width: 705px;
+
+}
+
+.app{
+  display: flex;
+  margin-top: 40px;
+}
+.screenshot{
+  margin-right: 30px;
+  max-width: 460px;
+}
+
+* {
+    outline: 1px solid red !important;
+    box-sizing: border-box;
+}
