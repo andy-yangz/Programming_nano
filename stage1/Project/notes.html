@@ -2,45 +2,98 @@
 text that will be ignored by the computer! -->
 <!DOCTYPE html> <!-- The DOCTYPE tells the browser what kind of document this is (HTML) -->
 <head> <!-- The head tag includes important information about the page -->
-  <meta charset="UTF-8"> <!-- This line defines something called "character encoding"
-  This will allow the browser to display certain characters (such as non-Roman letters) correctly.
-  You should include this line in the head of all of your webpages. -->
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <title>My Notes</title> <!-- This is the title of your page (what appears in the name of a browser tab) -->
-  <link rel="stylesheet" href="style.css"> <!-- This line links your CSS stylesheet to your HTML (see Lesson 1.3) -->
+  <link rel="stylesheet" href="css/notes.css"> <!-- This line links your CSS stylesheet to your HTML (see Lesson 1.3) -->
 </head>
 <body> <!-- The body tag is where the "flesh" of your HTML goes -->
   <!-- Write your HTML here -->
-  <div>
-    <h2>Lecture 1: The Basics of the web and HTML</h2>
-    <h3>Part1: Technological empathy to understand what happens when we open a web page.</h3>
+  <div class="header">
+    <div class="name">
+      <b>Andy Yang</b>
+    </div>
+    <div style="">
+      <ul class="menu" style="">
+        <li><a href="#">About me</a></li>
+        <li><a href="notes.html">My Notes</a></li>
+        <li><a href="#">Favorite Animes</a></li>
+        <li><a href="#">Playlist</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="TOC">
+      <h1>Table of Contents</h1>
+      <ol>
+          <li><a href="#lecture1">Lecture 1: The Basics of the web and HTML</a>
+              <ul>
+                  <li><a href="#concept-1-1"> Several important concepts about internet</a></li>
+                  <li><a href="#concept-1-2">How these work?</a></li>
+                  <li><a href="#concept-1-3">What make up HTML files</a></li>
+                  <li><a href="#concept-1-4">HTML Elements</a></li>
+                  <li><a href="#concept-1-5">Inline & Block</a></li>
+                  <li><a href="#concept-1-6">HTML file detail</a></li>
+              </ul>
+          </li>
+          <li> <a href="#lecture2">Lesson 2: The structure of HTML</a>
+              <ul>
+                  <li><a href="#concept-2-1">Funny analogy of HTML, CSS, and Javascript</a></li>
+                  <li><a href="#concept-2-2">Chrome developer tool</a></li>
+                  <li><a href="#concept-2-3">DOM (Document Object Model)</a></li>
+                  <li><a href="#concept-2-4">Everywhere boxes, why box</a></li>
+              </ul>
+          </li>
+          <li><a href="#lecture3">Lecture 3: CSS style and HTML structure</a>
+              <ul>
+                  <li><a href="#concept-3-1">CSS (Cascading Style Sheet)</a></li>
+                  <li><a href="#concept-3-2">OH: span & div, class & id</a></li>
+                  <li><a href="#concept-3-3">Box model</a></li>
+                  <li><a href="#concept-3-4">How to make a good boxes layout</a></li>
+                  <li><a href="#concept-3-5">Code, Test, Refine</a></li>
+              </ul>
+          </li>
+      </ol>
+  </div>
+
+  <h1 id = title>My IPND notes</h1>
+  <div class="lecture">
+    <h2 id="lecture1">Lecture 1: The Basics of the web and HTML</h2>
     <div>
-      <b>Several important concepts about internet</b>
-      <li><em>Web</em>: Web to connect different computers. Most famous one is <em>WWW</em> (World Wide Web).</li>
-      <li><em>HTML</em>: Hyper Text Markup Language. Main part of WWW.</li>
-      <li><em>urls</em>: What we can use it to access website.</li>
-      <li><em>HTTP</em>: Hyper Text Transfer Protocal. How html file be tranfered and displayed.</li>
-      <li><em>Web Application</em>: Applications used on web.</li>
+      <b id="concept-1-1">Several important concepts about internet</b>
+       <ul>
+          <li><em>Web</em>: Web to connect different computers. Most famous one is <em>WWW</em> (World Wide Web).</li>
+          <li><em>HTML</em>: Hyper Text Markup Language. Main part of WWW.</li>
+          <li><em>urls</em>: What we can use it to access website.</li>
+          <li><em>HTTP</em>: Hyper Text Transfer Protocal. How html file be tranfered and displayed.</li>
+          <li><em>Web Application</em>: Applications used on web.</li>
+       </ul>
       <br>
     </div>
     <div>
-      <b>How these works?</b>
+      <b id="concept-1-2">How these works?</b>
       <p>At first, user should use the browser, a web application, on his computer try to access a web site, which by entering
       urls in brower. And through web, by HTTP, the server will send us HTML files. So we can look these html files on our own
       computer through the brower.</p>
     </div>
     <div>
-      <b>What make up HTML files</b>
+      <b id="concept-1-3">What make up HTML files</b>
       <p>There are almost four parts compose HTML files. They are:
-      <li><em>Text Content: </em>Text strings what we see.</li>
-      <li><em>Mark Up: </em>What a web page looks like.</li>
-      <li><em>Reference to other documents: </em>Such like images, videos, and audios.</li>
-      <li><em>Other Pages: </em>We all familiar with this. Through hyperlink we can jump to other pages.</li>
+        <ul>
+          <li><em>Text Content: </em>Text strings what we see.</li>
+          <li><em>Mark Up: </em>What a web page looks like.</li>
+          <li><em>Reference to other documents: </em>Such like images, videos, and audios.</li>
+          <li><em>Other Pages: </em>We all familiar with this. Through hyperlink we can jump to other pages.</li>
+        </ul>
       <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3873828673/m-48724340"> More details.</a>
       </p>
     </div>
-    <h3>Part2: Learning some tags to create a simple html page</h3>
     <div>
-      <b>Elements</b>
+      <b id="concept-1-4">HTML Elements</b>
       <p>HTML files are made by various elements. <br>
         And normally elements are made by three parts, opening tag, content, closing tag. <br>
         However, some tags can also have attributes.
@@ -56,7 +109,7 @@ text that will be ignored by the computer! -->
       </p>
     </div>
     <div>
-      <b>Inline & Block</b>
+      <b id="concept-1-5">Inline & Block</b>
       <p>In addition to above variety, there are also a feature called <b>Block</b> is important. Block
       means a part of region divid with other parts. And we can change features of its looklike or something else.
       However, <b>Inline</b> is elements in a part of region or block. One easy way to discriminate them is to see
@@ -66,27 +119,19 @@ text that will be ignored by the computer! -->
       <li><em>Inline: </em>&ltem&gt &ltbr&gt</li></p>
     </div>
     <div>
-      <b>HTML file detail</b>
+      <b id="concept-1-6">HTML file detail</b>
       <p><li><em>Doctype</em>: There is a line to declare document type. Normally, HTML.</li>
       <li><em>Head</em>: This part will describe the layout of this html file. It can have CSS, Javascript. </li>
       <li><em>Body</em>: Main part of a html file. The contents that we want show to other people will be there.</li>
       </p>
     </div>
-    <div>
-      <b>Summary</b>
-      <p>-Normally, we go to WWW access HTML files through HTTP protcol. <br>
-      -HTML is made up by Text Content, Mark Up, and Reference to various documents and other pages. <br>
-      -HTML has many elements which have several categories. Like void tag, tag with attributes, and incline and block. <br>
-      -HTML has two parts. Head to tell the design. And body to tell the content. <br>
-      </p>
-    </div>
   </div>
 
   <!-- Lesson 2  -->
-  <div>
-    <h2>Lesson 2: The structure of HTML</h2>
+  <div class="lecture">
+    <h2 id="lecture2">Lesson 2: The structure of HTML</h2>
     <div>
-      <b>Funny analogy of HTML, CSS, and Javascript</b>
+      <b id="concept-2-1">Funny analogy of HTML, CSS, and Javascript</b>
       <p>If a webpage file is an house, then we can look <em>HTML</em> as it's walls and
       fundation. In other words, it forms the structure of webpage. <em>CSS</em>, which
       decides the style of the webpage, just like how we choose our room color and
@@ -94,14 +139,14 @@ text that will be ignored by the computer! -->
       the interactions of the webpage.</p>
     </div>
     <div>
-      <b>Chrome developer tool</b>
+      <b id="concept-2-2">Chrome developer tool</b>
       <p>If we use chrome, we can access some very covenient tool for our development.
       For shortcut, we can press Shift + Ctrl + i to call developer tool. From this tool,
       we could see structure of webpage very easily, and we can also change some features
       by our own to look what will happen.</p>
     </div>
     <div>
-      <b>DOM (Document Object Model)</b>
+      <b id="concept-2-3">DOM (Document Object Model)</b>
       <p>
         DOM means tree-like structure of page. Just like in HTML files, we can see
         many elements are included in other elements, which also are included by other elements.
@@ -109,7 +154,7 @@ text that will be ignored by the computer! -->
       </p>
     </div>
     <div>
-      <b>Everywhere boxes, why box</b>
+      <b id="concept-2-4">Everywhere boxes, why box</b>
       <p>At first, why we use boxes to represent elements is that in this way it will be
       easy to rearrange the style and layout of your webpage. Because the concept
       of box is so important that we need learn how to boxify a design. Before you
@@ -120,14 +165,14 @@ text that will be ignored by the computer! -->
 
   <!-- Lecture 3 -->
   <div class="lecture">
-    <h2>Lecture 3: CSS style and HTML structure</h2>
-    <div class="concept">
+    <h2 id="lecture3">Lecture 3: CSS style and HTML structure</h2>
+    <div class="concept" id="concept-3-1">
       <b>CSS (Cascading Style Sheet)</b>
       <p>CSS are the codes to control "Style" of HTML elements. It has two parts:
          the selector part to select elements; the declaration to declare the property and its value.
       </p>
     </div>
-    <div class="concept">
+    <div class="concept" id="concept-3-2">
       <b>OH: span & div, class & id</b>
       <p>
         The main difference between span and div two elements is that span is inline
@@ -141,7 +186,7 @@ text that will be ignored by the computer! -->
         as bookmarks of content.
       </p>
     </div>
-    <div class="concept">
+    <div class="concept" id="concept-3-3">
       <b>Box model</b>
       <p>
         Box model of HTML has four areas. The core one is called content, which
@@ -151,7 +196,7 @@ text that will be ignored by the computer! -->
         margin, which decied the space between boxes.
       </p>
     </div>
-    <div class="concept">
+    <div class="concept" id="concept-3-4">
       <b>How to make a good boxes layout</b>
       <p>
         Because box has many properties, so it is very hard to get right size of a box.
@@ -163,7 +208,7 @@ text that will be ignored by the computer! -->
         Sometiems, we can also use flex box layout to achieve a good layout.
       </p>
     </div>
-    <div class="concept">
+    <div class="concept" id="concept-3-5">
       <b>Code, Test, Refine</b>
       <p>
         For a big picture flow, when we write HTML file, we need do several steps.

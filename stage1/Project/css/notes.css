@@ -1,0 +1,47 @@
+body {
+	margin-top: 140px;
+}
+.header{
+	position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0px;
+    background: white;
+}
+
+.name{
+	font-size: 4em;
+	margin-left: 50px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+	border-bottom: 1px solid #a79b9b;
+}
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: rgb(194, 187, 174);
+}
+
+
+#title {
+    text-align: center;;
+    color:#FF5733;
+}
+
+.TOC{
+    font-size: larger;
+}
