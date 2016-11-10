@@ -1,6 +1,13 @@
 body {
 	margin-top: 140px;
+	max-width: 2000px;
 }
+
+.lecture {
+	font-size: 1.4em;
+	font-family: Helvetica;
+}
+
 .header{
 	position: fixed;
     width: 100%;
@@ -19,7 +26,36 @@ body {
 	color : #000000;
 }
 
+.lecture {
+	background-color: #FF5733;
+	border-radius: 20px;
+	color: white;
+	padding: 15px;
+	margin: 10px auto;
+}
 
+.lecture-title {
+	text-align: center;
+}
+
+.concept {
+	background-color: #75FF33;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+	color: black;
+}
+
+.concept-title {
+	text-align: center;
+	font-size: 28px;
+	margin: 8px;
+	font-weight: bold;
+}
+
+p {
+	margin: 10px;
+}
 .menu {
   list-style: none;
   margin: 0;
@@ -45,7 +81,7 @@ body {
 
 #title {
     text-align: center;;
-    color:#FF5733;
+    color:white;
 }
 
 .TOC{
