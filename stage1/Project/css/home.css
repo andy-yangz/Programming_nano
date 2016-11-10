@@ -2,9 +2,7 @@ body {
 	margin-top: 200px;
 }
 .header{
-	position: fixed;
     width: 100%;
-    z-index: 9999;
     top: 0px;
     background: white;
 }
@@ -12,6 +10,7 @@ body {
 .name{
 	font-size: 4em;
 	margin-left: 50px;
+	margin-top: 10px;
 }
 
 .menu {
