@@ -68,7 +68,7 @@ p {
 
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
-	border-bottom: 1px solid #a79b9b;
+  border-bottom: 1px solid #a79b9b;
 }
 
 .menu a {

@@ -1,0 +1,10 @@
+.content {
+    background-color: rgb(65, 48, 217);
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+}
+
+.introduction, .aside {
+    flex: 1 100%;
+}
