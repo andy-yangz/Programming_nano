@@ -2,6 +2,7 @@ body {
 	margin-top: 200px;
 }
 .header{
+	position: fixed;
     width: 100%;
     top: 0px;
     background: white;
@@ -11,6 +12,11 @@ body {
 	font-size: 4em;
 	margin-left: 50px;
 	margin-top: 10px;
+}
+
+.home-link {
+	text-decoration : none;
+	color : #000000;
 }
 
 .menu {
