@@ -1,56 +1,29 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-	margin-top: 180px;
-	max-width: 2000px;
-}
-
-.content {
-    display: flex;
-    flex-flow: row;
-    text-align: center;
-
-    margin: 10px;
-}
-
-.introduction {
-    flex: 1 70%;
-    font-family: sans-serif;
-    border:1px #e5e5e5 solid;
-    font-size: 1.4em;
-    background: #ccddcc;
+.playlist {
+    background-color:#3375FF;
     border-radius: 20px;
-
+    color: white;
+    padding: 20px;
+    margin: 140px auto;
+    text-align: center;
 }
-p {
-    width: 60%;
+
+.MOOC {
+    background-color: #CCDCFF;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    margin: 20px;
     margin-left: 20%;
-    text-align: left;
+    padding-bottom: 50px;
+    width: 60%;
 }
 
-.aside {
-    flex: 1 30%;
+.teacher {
+    font-style: italic;
 }
 
-.information {
-    margin-top: 20px;
-    list-style: none;
-    text-align: left;
-    margin-left: 15%;
-}
-
-li {
-    margin: 10px 0;
-}
-.avatar {
-
-}
-
-.avatar img {
-    width:70%;
-    border-radius:100%;
+iframe {
+    border-radius: 10px;
 }
 
 .header{
