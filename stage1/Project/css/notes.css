@@ -1,5 +1,4 @@
 body {
-	margin-top: 140px;
 	max-width: 2000px;
 }
 
@@ -86,4 +85,5 @@ p {
 
 .TOC{
     font-size: larger;
+	margin-top: 140px;
 }
