@@ -36,12 +36,15 @@ p {
 
 .information {
     margin-top: 20px;
-    list-style: none;
     text-align: left;
     margin-left: 15%;
 }
 
-li {
+.information ol {
+    list-style: none;
+}
+
+.information ol li {
     margin: 10px 0;
 }
 .avatar {

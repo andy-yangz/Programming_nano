@@ -24,6 +24,9 @@
 
 iframe {
     border-radius: 10px;
+    width: 560px;
+    height: 315px;
+    frameborder: 0;
 }
 
 .header{
