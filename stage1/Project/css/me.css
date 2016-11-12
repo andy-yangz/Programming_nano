@@ -77,14 +77,6 @@ p {
 .menu {
   list-style: none;
   margin: 0;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
   justify-content: flex-end;
   border-bottom: 1px solid #a79b9b;
 }
