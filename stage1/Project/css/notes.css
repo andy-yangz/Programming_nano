@@ -26,7 +26,7 @@ body {
 }
 
 .lecture {
-	background-color: #FF5733;
+	background-color: #ff5733;
 	border-radius: 20px;
 	color: white;
 	padding: 15px;
@@ -38,7 +38,7 @@ body {
 }
 
 .concept {
-	background-color: #75FF33;
+	background-color: #75ff33;
 	padding: 5px;
 	margin: 5px;
 	border-radius: 10px;
@@ -58,6 +58,7 @@ p {
 .menu {
   list-style: none;
   margin: 0;
+  display: flex;
   justify-content: flex-end;
   border-bottom: 1px solid #a79b9b;
 }

@@ -49,6 +49,7 @@ iframe {
 .menu {
   list-style: none;
   margin: 0;
+  display: flex;
   justify-content: flex-end;
   border-bottom: 1px solid #a79b9b;
 }
