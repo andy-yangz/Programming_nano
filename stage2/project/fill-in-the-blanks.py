@@ -16,11 +16,19 @@
 # To help you get started, we've provided a sample paragraph that you can use when testing your code.
 # Your game should consist of 3 or more levels, so you should add your own paragraphs as well!
 
-sample = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
+easy_level = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
 don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
 tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
 
+easy_answer = ['function','parameter','None','list']
+
+normal_level = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
+adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
+don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
+tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
+
+normal_answer = ['function','parameter','None','list']
 # The answer for ___1___ is 'function'. Can you figure out the others?
 
 # We've also given you a file called fill-in-the-blanks.pyc which is a working version of the project.
@@ -34,3 +42,59 @@ tuple, and ___4___ or can be more complicated such as objects and lambda functio
 # How can you adapt that design to work with numbered blanks?
 
 # If you need help, you can sign up for a 1 on 1 coaching appointment: https://calendly.com/ipnd-1-1/20min/
+
+def find_blank(question):
+	"""Input a string of question, find blank in it. Out put blank string."""
+	for i in range(1,5):
+		blank = '___'+str(i)+'___'
+		if question.find(blank) > -1:
+			return blank
+	return None
+
+
+def start_game():
+	print "Please select a game difficulty."
+	hard_level = raw_input('You can choose easy, normal, hard, and insane.\n')
+	keep_on = 0
+	if hard_level == 'easy':
+		keep_on = engine(easy_level, easy_answer)
+	if hard_level == 'normal' or keep_on == 1:
+		keep_on = engine(normal_level, normal_answer)
+	if hard_level == 'hard' or keep_on == 1:
+		keep_on = engine(hard_level, hard_answer)
+	if hard_level == 'insane' or keep_on == 1:
+		keep_on = engine(insane_level, insane_answer)
+	print "You WIN!!!"
+
+# print find_blank(sample)
+def engine(level,answer):
+	# 1. Read level strings
+	# 2. Pop questions, and determine question type
+	# 3. Find blank, read answer
+	# 4. Display whole with the words you filled in
+	# level;
+ # 	find question Display
+ # 	fill question
+ 	while True:
+ 		replacement = find_blank(level);
+ 		if replacement:
+ 			for i in range(1,4):
+ 				print level
+ 				print '\n\n\n'
+ 				user_input = raw_input('What should be blank '+replacement + '? ')
+ 				if answer[int(replacement[3])-1].lower() == user_input.lower():
+ 					level = level.replace(replacement,user_input)
+ 					print "Great! Correct!"
+ 					break
+ 				else:
+ 					print user_input + " is not right answer. Please try again."
+ 					print "You still have " + str(3-i) +"chance."
+ 		else:
+ 			print "You win this level!"
+ 			break
+ 	yn = raw_input('Do you want challenge more? yes/no\n')
+ 	if yn == 'yes':
+ 		return 1
+ 	return 0
+
+start_game()
