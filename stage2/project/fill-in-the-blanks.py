@@ -34,9 +34,22 @@ in 1837.The ___3___ Engine contained an ALU, basic flow control, and integrated 
 the father of Computer is ___4___ ___5____ with his development of Z1, Z2, Z3, and Z4.'''
 hard_answer =  ['Charles Babbage', 'Analytical', 'Konrad Zuse']
  
-insane = "wa'-wa' equal ___1___"
+insane_question = "wa'-wa' equal ___1___"
 insane_answer =["cha'"]
 
+questions = {
+	'easy': easy_question,
+	'normal': normal_question,
+	'hard': hard_question,
+	'insane': insane_question
+}
+
+answers = {
+	'easy': easy_answer,
+	'normal': normal_answer,
+	'hard': hard_answer,
+	'insane': insane_answer
+}
 # sample = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 # adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
 # don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
@@ -79,7 +92,17 @@ def want_more():
 
 
 def level_change(keep_on,level):
-	pass
+	if keep_on == 0:
+		return None
+	else:
+		if level == 'easy':
+			return 'normal'
+		elif level == 'normal':
+			return 'hard'
+		elif level == 'hard':
+			return 'insane'
+		else:
+			return 'level_end'
 
 def start_game():
 	print "Welcome to Who Wants to Be a Millionaire Please select a game difficulty."
@@ -121,7 +144,7 @@ def main(questions,answers):
  # 	find question Display
  # 	fill question
  	level = start_game()
- 	while level:
+ 	while level and level != 'level_end':
  		question = level_choose(level)
  		answer = answers(level)
  		keep_on = engine(question,answer)
@@ -130,4 +153,9 @@ def main(questions,answers):
 
 
 # Engine test
-engine(easy_question,easy_answer)
+# engine(easy_question,easy_answer)
+
+print questions['easy']
+print questions['normal']
+print questions['hard']
+print answers['easy']
