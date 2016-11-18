@@ -1,5 +1,5 @@
 # IPND Stage 2 Final Project
-
+import sys
 # You've built a Mad-Libs game with some help from Sean.
 # Now you'll work on your own game to practice your skills and demonstrate what you've learned.
 
@@ -15,45 +15,34 @@
 
 # To help you get started, we've provided a sample paragraph that you can use when testing your code.
 # Your game should consist of 3 or more levels, so you should add your own paragraphs as well!
+
 easy_question = '''River ___1___ is the longest river in the world. Mount ___2___ is the highest mountain,
- 		which 29035 feet above the sea level. And largest sea is ___3___ Sea, largest lake is ___4___ Sea.'''
+which 29035 feet above the sea level. And largest sea is ___3___ Sea, largest lake is ___4___ Sea.'''
  
-easy_answer = ['Nile', 'everest', 'Mediterrannean', 'Caspian']
+easy_answer = ['Nile', 'Everest', 'Mediterrannean', 'Caspian']
  
 normal_question = '''When we solve a programming question. First we should understand ___1___, like what is ___1___,
-				 and how to represent it. Second, we think about what is ___2___. Third, let's solve the problem. 
-				 We need workout some ___3___ first. So we can see how this program actually work. Forth, comparing
-				 to human, computer like ___4___ simple way. So we should try ___4___ simple solution. Last, we should
-				 develop ___5___ step by step. Which means we need write a bit then test a bit.'''
+and how to represent it. Second, we think about what is ___2___. Third, let's solve the problem. 
+We need workout some ___3___ first. So we can see how this program actually work. Forth, comparing
+to human, computer like ___4___ simple way. So we should try ___4___ simple solution. Last, we should
+develop ___5___ step by step. Which means we need write a bit then test a bit.'''
  
 normal_answer = ['inputs','outputs','examples','mechnical','incrementally']
- 
+
 hard_question = '''___1___ ___2___was considered to be the father of computing after his invention of the ___3___ Engine
- 		in 1837.The ___3___ Engine contained an ALU, basic flow control, and integrated memory. However,
-  		the father of Computer is ___4___ ___5____ with his development of Z1, Z2, Z3, and Z4.'''
+in 1837.The ___3___ Engine contained an ALU, basic flow control, and integrated memory. However,
+the father of Computer is ___4___ ___5____ with his development of Z1, Z2, Z3, and Z4.'''
 hard_answer =  ['Charles Babbage', 'Analytical', 'Konrad Zuse']
  
 insane = "wa'-wa' equal ___1___"
 insane_answer =["cha'"]
 
-
-
-
-easy_level = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
-adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
-don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
-tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
-
-easy_answer = ['function','parameter','None','list']
-
-normal_level = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
-adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
-don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
-tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
-
-normal_answer = ['function','parameter','None','list']
-
-
+# sample = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
+# adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
+# don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
+# tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
+# 
+# sample_answer = ['function','parameter','None','list']
 # The answer for ___1___ is 'function'. Can you figure out the others?
 
 # We've also given you a file called fill-in-the-blanks.pyc which is a working version of the project.
@@ -68,33 +57,62 @@ normal_answer = ['function','parameter','None','list']
 
 # If you need help, you can sign up for a 1 on 1 coaching appointment: https://calendly.com/ipnd-1-1/20min/
 
+
 def find_blank(question):
 	"""Input a string of question, find blank in it. Out put blank string."""
-	for i in range(1,5):
+	max_blank_number = 6
+	for i in range(1,max_blank_number):
 		blank = '___'+str(i)+'___'
 		if question.find(blank) > -1:
 			return blank
 	return None
 
-def level_choose(level):
+def want_more():
+	while True:
+		keep_on = raw_input('Do you want try more level ? y/n: ')
+ 		if keep_on.lower() in ['yes','y']:
+ 			return 1
+ 		elif keep_on.lower() in ['no','n']:
+ 			return 0
+ 		else:
+ 			print "Can't read! Please input yes or no.\n" 
 
+
+def level_change(keep_on,level):
+	pass
 
 def start_game():
 	print "Welcome to Who Wants to Be a Millionaire Please select a game difficulty."
 	hard_level = raw_input('You can choose easy, normal, hard, and insane.\n')
-	keep_on = 0
-	if hard_level == 'easy':
-		keep_on = engine(easy_level, easy_answer)
-	if hard_level == 'normal' or keep_on == 1:
-		keep_on = engine(normal_level, normal_answer)
-	if hard_level == 'hard' or keep_on == 1:
-		keep_on = engine(hard_level, hard_answer)
-	if hard_level == 'insane' or keep_on == 1:
-		keep_on = engine(insane_level, insane_answer)
 	print "You WIN!!!"
 
+def engine(question,answer):
+	replacement = find_blank(question)
+	chance = 3
+	while replacement:
+		print '\n'+question + '\n'
+		for i in range(1,chance+1):
+			user_input = raw_input('What should be blank '+replacement + '? ')
+			if answer[int(replacement[3])-1].lower() == user_input.lower():
+ 				question = question.replace(replacement,answer[int(replacement[3])-1])
+ 				print "Great! Correct!"
+ 				break
+ 			else:
+ 				if i < chance:
+ 					print user_input + " is not right answer. Please try again."
+ 					print "You still have " + str(chance-i) +" chance.\n"
+ 				else:
+ 					print "You fail. Gave Over!"
+ 					sys.exit(0)
+
+ 		replacement = find_blank(question)
+ 	print "You win this level!!! \n"
+ 	return want_more()
+
+
+
 # print find_blank(sample)
-def engine(questins,answer):
+def main(questions,answers):
 	# 1. Read level strings
 	# 2. Pop questions, and determine question type
 	# 3. Find blank, read answer
@@ -103,26 +121,13 @@ def engine(questins,answer):
  # 	find question Display
  # 	fill question
  	level = start_game()
- 	question = level_choose(level)
+ 	while level:
+ 		question = level_choose(level)
+ 		answer = answers(level)
+ 		keep_on = engine(question,answer)
+ 		level = level_change(keep_on,level)
+ 	end_game()
 
- 	while True:
- 		replacement = find_blank(questins);
- 		if replacement:
- 			for i in range(1,4):
- 				user_input = raw_input('What should be blank '+replacement + '? ')
- 				if answer[int(replacement[3])-1].lower() == user_input.lower():
- 					questins = questins.replace(replacement,user_input)
- 					print "Great! Correct!"
- 					break
- 				else:
- 					print user_input + " is not right answer. Please try again."
- 					print "You still have " + str(3-i) +"chance."
- 		else:
- 			print "You win this level!"
- 			break
- 	yn = raw_input('Do you want challenge more? yes/no\n')
- 	if yn == 'yes':
- 		return 1
- 	return 0
 
-start_game()
+# Engine test
+engine(easy_question,easy_answer)
