@@ -15,6 +15,29 @@
 
 # To help you get started, we've provided a sample paragraph that you can use when testing your code.
 # Your game should consist of 3 or more levels, so you should add your own paragraphs as well!
+easy_question = '''River ___1___ is the longest river in the world. Mount ___2___ is the highest mountain,
+ 		which 29035 feet above the sea level. And largest sea is ___3___ Sea, largest lake is ___4___ Sea.'''
+ 
+easy_answer = ['Nile', 'everest', 'Mediterrannean', 'Caspian']
+ 
+normal_question = '''When we solve a programming question. First we should understand ___1___, like what is ___1___,
+				 and how to represent it. Second, we think about what is ___2___. Third, let's solve the problem. 
+				 We need workout some ___3___ first. So we can see how this program actually work. Forth, comparing
+				 to human, computer like ___4___ simple way. So we should try ___4___ simple solution. Last, we should
+				 develop ___5___ step by step. Which means we need write a bit then test a bit.'''
+ 
+normal_answer = ['inputs','outputs','examples','mechnical','incrementally']
+ 
+hard_question = '''___1___ ___2___was considered to be the father of computing after his invention of the ___3___ Engine
+ 		in 1837.The ___3___ Engine contained an ALU, basic flow control, and integrated memory. However,
+  		the father of Computer is ___4___ ___5____ with his development of Z1, Z2, Z3, and Z4.'''
+hard_answer =  ['Charles Babbage', 'Analytical', 'Konrad Zuse']
+ 
+insane = "wa'-wa' equal ___1___"
+insane_answer =["cha'"]
+
+
+
 
 easy_level = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
@@ -29,6 +52,8 @@ don't specify the value to return. ___2___ can be standard data types such as st
 tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
 
 normal_answer = ['function','parameter','None','list']
+
+
 # The answer for ___1___ is 'function'. Can you figure out the others?
 
 # We've also given you a file called fill-in-the-blanks.pyc which is a working version of the project.
@@ -51,9 +76,11 @@ def find_blank(question):
 			return blank
 	return None
 
+def level_choose(level):
+
 
 def start_game():
-	print "Please select a game difficulty."
+	print "Welcome to Who Wants to Be a Millionaire Please select a game difficulty."
 	hard_level = raw_input('You can choose easy, normal, hard, and insane.\n')
 	keep_on = 0
 	if hard_level == 'easy':
@@ -67,7 +94,7 @@ def start_game():
 	print "You WIN!!!"
 
 # print find_blank(sample)
-def engine(level,answer):
+def engine(questins,answer):
 	# 1. Read level strings
 	# 2. Pop questions, and determine question type
 	# 3. Find blank, read answer
@@ -75,13 +102,16 @@ def engine(level,answer):
 	# level;
  # 	find question Display
  # 	fill question
+ 	level = start_game()
+ 	question = level_choose(level)
+
  	while True:
- 		replacement = find_blank(level);
+ 		replacement = find_blank(questins);
  		if replacement:
  			for i in range(1,4):
  				user_input = raw_input('What should be blank '+replacement + '? ')
  				if answer[int(replacement[3])-1].lower() == user_input.lower():
- 					level = level.replace(replacement,user_input)
+ 					questins = questins.replace(replacement,user_input)
  					print "Great! Correct!"
  					break
  				else:
