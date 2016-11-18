@@ -79,8 +79,6 @@ def engine(level,answer):
  		replacement = find_blank(level);
  		if replacement:
  			for i in range(1,4):
- 				print level
- 				print '\n\n\n'
  				user_input = raw_input('What should be blank '+replacement + '? ')
  				if answer[int(replacement[3])-1].lower() == user_input.lower():
  					level = level.replace(replacement,user_input)
