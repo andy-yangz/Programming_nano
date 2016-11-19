@@ -67,7 +67,7 @@ rewards = {
 
 
 def find_blank(question):
-	"""Input a string of question, find blank in it. Out put blank string."""
+	"""Input a question string, find blank in it. Out put this blank string."""
 	max_blank_number = 6
 	for i in range(1,max_blank_number):
 		blank = '___'+str(i)+'___'
@@ -76,6 +76,7 @@ def find_blank(question):
 	return None
 
 def want_more():
+	'''Prompt player whether want to try higher level. Return keep_on flag 0 or 1.'''
 	while True:
 		keep_on = raw_input('Do you want try more level ? y/n: ')
  		if keep_on.lower() in ['yes','y']:
@@ -87,6 +88,9 @@ def want_more():
 
 
 def level_change(keep_on,level):
+	'''Input keep_on flag and current level. If player want keep on, 
+	then output string of higher level. But if player already in highest 
+	level, then return string of level_end'''
 	if keep_on == 0:
 		return None
 	else:
@@ -103,6 +107,8 @@ def level_change(keep_on,level):
 			return 'level_end'
 
 def start_game():
+	'''Start of game. Prompt player choose hard level. Then output 
+	correspond string of level.'''
 	print "\nWelcome to Who Wants to Be a Pythonaire !!!\nYou can try to answer all the question or just from one hard level."
 	print "You will get correspond rewards after this game, according to your result."
 	print "But if you are fail between this game you can get nothing.\n"
@@ -117,6 +123,7 @@ def start_game():
 
 
 def end_game(reward):
+	'''End of game. Input rewards at end of game. Then print out ending words.'''
 	print "\n\nYou WIN!!!"
 	print "Let's the first beauty in Python Kingdom give you reward and her lovely kiss!!!"
 	time.sleep(5)
@@ -130,10 +137,16 @@ def end_game(reward):
 	print "--------------------------------"
 
 def reward_calculate(question_number,reward):
+	'''Input question number and reward level for each question for current level.
+	   Output whole reward for this level.'''
 	return question_number*reward
 
 
 def engine(question,answer):
+	'''The engine of this game. Input current level question and answer. 
+		Prompt question and then check answer. If fail three times to answer
+		correct answer, then exit program. If get correct all answer, it will
+		prompt player whether go to higher level or not. Then return keep_on flag'''
 	replacement = find_blank(question)
 	chance = 3
 	while replacement:
@@ -149,7 +162,7 @@ def engine(question,answer):
  					print user_input + " is not right answer. Please try again."
  					print "You still have " + str(chance-i) +" chance.\n"
  				else:
- 					print "You fail. Gave Over!"
+ 					print "You fail. Gave Over!\nYou get nothing."
  					sys.exit(0)
 
  		replacement = find_blank(question)
@@ -158,15 +171,10 @@ def engine(question,answer):
 
 
 
-# print find_blank(sample)
 def main(questions,answers,rewards):
-	# 1. Read level strings
-	# 2. Pop questions, and determine question type
-	# 3. Find blank, read answer
-	# 4. Display whole with the words you filled in
-	# level;
- # 	find question Display
- # 	fill question
+	'''Main structure of this game. Inputs information of questions, answers,
+	and rewards information for all level. Then start game, calculate rewards, 
+	go through questions, and at last call end_game to print end scence.'''
  	total_reward = 0;
  	level = start_game()
  	while level and level != 'level_end':
@@ -179,5 +187,6 @@ def main(questions,answers,rewards):
  		keep_on = engine(question,answer)
  		total_reward += reward_calculate(len(answer),reward)
  		level = level_change(keep_on,level)
- 	end_game(reward)
+ 	end_game(total_reward)
 
+main(questions,answers,rewards)
