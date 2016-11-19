@@ -69,8 +69,8 @@ rewards = {
 def find_blank(question):
 	"""Input a question string, find blank in it. Out put this blank string."""
 	max_blank_number = 6
-	for i in range(1,max_blank_number):
-		blank = '___'+str(i)+'___'
+	for current_attempt in range(1,max_blank_number):
+		blank = '___'+str(current_attempt)+'___'
 		if question.find(blank) > -1:
 			return blank
 	return None
@@ -109,7 +109,8 @@ def level_change(keep_on,level):
 def start_game():
 	'''Start of game. Prompt player choose hard level. Then output 
 	correspond string of level.'''
-	print "\nWelcome to Who Wants to Be a Pythonaire !!!\nYou can try to answer all the question or just from one hard level."
+	print ("\nWelcome to Who Wants to Be a Pythonaire !!!\n"
+			"You can try to answer all the question or just from one hard level.")
 	print "You will get correspond rewards after this game, according to your result."
 	print "But if you are fail between this game you can get nothing.\n"
 	print "Please select a game difficulty."
@@ -121,6 +122,15 @@ def start_game():
 			print "\n%s is not an option!"%(level)
 			level = raw_input("Please type a game difficulty among easy, normal, hard, and insane.\n")
 
+def chance_decide():
+	print ("\nBefore start you game\n"
+			"you can decide how many times you can guess for each question.")
+	while True:
+		try:
+			chance = int(raw_input('How many chance do you want: '))
+			return chance
+		except ValueError:
+			print "\nInvalid input! \nPlease enter integer number."
 
 def end_game(reward):
 	'''End of game. Input rewards at end of game. Then print out ending words.'''
@@ -128,11 +138,11 @@ def end_game(reward):
 	print "Let's the first beauty in Python Kingdom give you reward and her lovely kiss!!!"
 	time.sleep(5)
 	print "Muahhhhhhhhhhhh!"
-	time.sleep(5)
+	time.sleep(3)
 	print "and this is your reward"
 	time.sleep(3)
 	print "-------------------------------"
-	print "|     pythin kindom bank       |"
+	print "|     python kindom bank       |"
 	print "|     	%d dollors          |"%(reward)
 	print "--------------------------------"
 
@@ -142,13 +152,12 @@ def reward_calculate(question_number,reward):
 	return question_number*reward
 
 
-def engine(question,answer):
+def engine(question,answer, chance):
 	'''The engine of this game. Input current level question and answer. 
-		Prompt question and then check answer. If fail three times to answer
+		Prompt question and then check answer. If fail chance times to answer
 		correct answer, then exit program. If get correct all answer, it will
 		prompt player whether go to higher level or not. Then return keep_on flag'''
 	replacement = find_blank(question)
-	chance = 3
 	while replacement:
 		print '\n'+question + '\n'
 		for i in range(1,chance+1):
@@ -162,7 +171,7 @@ def engine(question,answer):
  					print user_input + " is not right answer. Please try again."
  					print "You still have " + str(chance-i) +" chance.\n"
  				else:
- 					print "You fail. Gave Over!\nYou get nothing."
+ 					print "\nYou fail. Gave Over!\nPlease challenge again."
  					sys.exit(0)
 
  		replacement = find_blank(question)
@@ -177,14 +186,16 @@ def main(questions,answers,rewards):
 	go through questions, and at last call end_game to print end scence.'''
  	total_reward = 0;
  	level = start_game()
+ 	chance = chance_decide()
  	while level and level != 'level_end':
  		question = questions[level]
  		answer = answers[level]
  		reward = rewards[level]
- 		print "This %s level."%level
- 		print "\nFor %s level, you get %d dollors from each question.\nIf you don't fail in the level."%(level,reward)
+ 		print "\nThis %s level."%level
+ 		print "\nFor %s level, you get %d dollors from each question."%(level,reward)
+ 		print "If you don't fail in the level."
 
- 		keep_on = engine(question,answer)
+ 		keep_on = engine(question,answer,chance)
  		total_reward += reward_calculate(len(answer),reward)
  		level = level_change(keep_on,level)
  	end_game(total_reward)
