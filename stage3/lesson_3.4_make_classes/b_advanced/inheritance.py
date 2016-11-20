@@ -19,5 +19,13 @@ class Parent():
 
 class Child(Parent):
     def __init__(self, last_name, eye_color, number_of_toys):
+    	print("Child Constructor Called")
+    	Parent.__init__(self,last_name,eye_color)
+    	self.number_of_toys = number_of_toys
 
     def show_info(self):
+    	Parent.show_info(self)
+    	print("Number of toys: %d"%self.number_of_toys)
+
+alex_yang = Child("Yang", "Brown",5)
+alex_yang.show_info()
