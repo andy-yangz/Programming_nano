@@ -19,7 +19,7 @@ the_shawshank_redemption = media.Movie("The Shawshank Redemption",
 							"Frank Darabont, Stephen King",
 							"Tim Robbins, Morgan Freeman",
 							"142 min",
-							'1994-10-14')
+							"1994-10-14")
 
 life_is_beautiful = media.Movie("La vita e bella",
 							"https://img3.doubanio.com/view/photo/photo/public/p2194576972.jpg",
