@@ -16,6 +16,11 @@ import urllib
 
 def read_text():
     # Your code here.
+    quotes = open('./movie_quotes.txt')
+    contents = quotes.read()
+    print(contents)
+    quotes.close()
 
 def check_profanity(text):
     # Your code here.
+	connection = urllib.urlopen()
